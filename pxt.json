@@ -10,6 +10,8 @@
         "README.md",
         "sentry.ts",
         "enums.d.ts",
+        "main.blocks",
+        "main.ts",
         "_locales/zh-cn/sentry-strings.json",
         "_locales/zh-cn/sentry-jsdoc-strings.json",
         "_locales/zh-tw/sentry-strings.json",
