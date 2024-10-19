@@ -323,8 +323,8 @@ namespace Sentry {
             if (this._mode != mode) {
                 this._mode = mode;
                 if (mode == sentry_mode_e.kI2CMode) {
-                    this._stream = new SentryI2CMethod();  
-                }else{
+                    this._stream = new SentryI2CMethod();
+                } else {
                     this._stream = new SentryUartMethod();
                 }
                 this._stream.address = this._address;
@@ -502,7 +502,7 @@ namespace Sentry {
 
             if (null == _vision_states[vision_type - 1] || (vision_type - 1) >= sentry_vision_e.kVisionMaxType)
                 return 0;
-            
+
             obj_id = obj_id - 1;
 
             switch (obj_info) {
@@ -548,7 +548,7 @@ namespace Sentry {
             while (pSentry.Begin(mode) != SENTRY_OK);
         }
     }
-    
+
     /**
      * Sentry vision enable set.
     */
@@ -577,7 +577,7 @@ namespace Sentry {
     * @param w ROI weight.
     * @param h ROI height.
     */
-    //% blockId=Sentry_vision_color_param block="set  Sentry algorithm Color ROI centre x%x| y%y| weight%w| height%h ||param %param index %param_id"
+    //% blockId=Sentry_vision_color_param block="set  Sentry algorithm Color ROI centre x%x| y%y| weight%w| height%h ||param index %param_id"
     //% param_id.min=1 param_id.max=25 param_id.defl=1
     //% inlineInputMode=inline
     //% group="AlgorithmSettings" advanced=true
@@ -596,7 +596,7 @@ namespace Sentry {
     * @param h detecte min height.
     * @param l detecte lable.
     */
-    //% blockId=Sentry_vision_bold_param block="set  Sentry algorithm Bold min weight%w| height%h| lable%l ||param %param index %param_id"
+    //% blockId=Sentry_vision_bold_param block="set  Sentry algorithm Bold min weight%w| height%h| lable%l ||param index %param_id"
     //% param_id.min=1 param_id.max=25 param_id.defl=1
     //% inlineInputMode=inline
     //% group="AlgorithmSettings" advanced=true
@@ -615,7 +615,7 @@ namespace Sentry {
     * @param param4.
     * @param param5.
     */
-    //% blockId=Sentry_vision_custom_param block="set  Sentry  %vision_type|  param1%param1| param2%param2| param3%param3| param4%param4| param5%param5 || 索引  %obj_id  "
+    //% blockId=Sentry_vision_custom_param block="set  Sentry  %vision_type|  param1%param1| param2%param2| param3%param3| param4%param4| param5%param5 || 索引  %param_id  "
     //% param_id.min=1 param_id.max=25 param_id.defl=1
     //% vision_type.defl=sentry_vision_e.kVisionCustom
     //% inlineInputMode=inline
@@ -642,25 +642,25 @@ namespace Sentry {
     /**
     * get vision sentry_object_t data, this function will update vision sentry_object_t automatically.
     * @param vision_type: vision type.
-    * @param object_inf:  object information
+    * @param obj_info:  object information
     * @param obj_id:  object index
     */
-    //% blockId=Sentry_get_value block=" Sentry  algorithm%vision_type| Recognition%object_inf|| index %obj_id " color="#2E8B57"
+    //% blockId=Sentry_get_value block=" Sentry  algorithm%vision_type| Recognition%obj_info|| index %obj_id " color="#2E8B57"
     //% inlineInputMode=inline
     //% expandableArgumentMode="enabled"
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Functions"
-    export function GetValue(vision_type: sentry_vision_e, object_info: sentry_gen_info_e, obj_id: number = 1): number {
-        return <number>pSentry.GetValue(<number>vision_type, <number>object_info, obj_id);
+    export function GetValue(vision_type: sentry_vision_e, obj_info: sentry_gen_info_e, obj_id: number = 1): number {
+        return <number>pSentry.GetValue(<number>vision_type, <number>obj_info, obj_id);
     }
-    //% blockId=Sentry_get_custom_value block=" Sentry  algorithm%vision_type| get %object_inf|| index %obj_id " color="#2E8B57"
+    //% blockId=Sentry_get_custom_value block=" Sentry  algorithm%vision_type| get %obj_info|| index %obj_id " color="#2E8B57"
     //% inlineInputMode=inline
     //% expandableArgumentMode="enabled"
     //% vision_type.defl=sentry_vision_e.kVisionCustom
     //% obj_id.min=1 obj_id.max=25 obj_id.defl=1
     //% group="Functions"
-    export function GetCustomValue(vision_type: sentry_vision_e, object_info: sentry_custom_info_e, obj_id: number = 1): number {
-        return <number>pSentry.GetValue(<number>vision_type, <number>object_info, obj_id);
+    export function GetCustomValue(vision_type: sentry_vision_e, obj_info: sentry_custom_info_e, obj_id: number = 1): number {
+        return <number>pSentry.GetValue(<number>vision_type, <number>obj_info, obj_id);
     }
     /**
      * Get the result of vision color recognition.

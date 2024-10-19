@@ -4,7 +4,8 @@
     "description": "Sensor designed for the AI education.",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "microphone": "*"
     },
     "files": [
         "README.md",
@@ -16,6 +17,13 @@
         "_locales/zh-cn/sentry-jsdoc-strings.json",
         "_locales/zh-tw/sentry-strings.json",
         "_locales/zh-tw/sentry-jsdoc-strings.json"
+    ],
+    "targetVersions": {
+        "target": "7.0.51",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
     ],
     "preferredEditor": "tsprj"
 }
